@@ -5,8 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'package:hospital_doctor/constant.dart';
 import 'package:hospital_doctor/model_package/card_model.dart';
 import 'package:hospital_doctor/model_package/top_doctor_model.dart';
+import 'package:hospital_doctor/page/doctor_categories.dart';
 import 'package:hospital_doctor/page/patients_page.dart';
 import 'package:hospital_doctor/page/profile_open_page.dart';
+import 'package:hospital_doctor/page/refrance_page.dart';
+import 'package:hospital_doctor/page/setting_page.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -40,6 +43,7 @@ class _DashBoardState extends State<DashBoard> {
     ];
   }
 
+  // ignore: non_constant_identifier_names
   void RecordnotificationList() {
     recordList = [
       RecordModel(
@@ -97,7 +101,7 @@ class _DashBoardState extends State<DashBoard> {
           style: TextStyle(
               color: Constant.primaryColor, fontSize: 20, fontWeight: FontWeight.w600),
         ),
-        iconTheme: IconThemeData(color: Constant.greenColor),
+        iconTheme: IconThemeData(color: Constant.greenColor,),
       ),
       drawer: SafeArea(
         child: Drawer(
@@ -183,16 +187,28 @@ class _DashBoardState extends State<DashBoard> {
                 ),
                 title: Text('YY'),
               ),
-              ListTile(
-                leading: Card(
-                  child: Icon(Icons.share,color: Constant.primaryColor,),
+              InkWell(
+                child: ListTile(
+                  leading: Card(
+                    child: Icon(Icons.share_outlined,color: Constant.primaryColor,),
+                  ),
+                  title: Text('Refer'),
                 ),
-                title: Text('Refer'),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RefrancesPage()));
+                },
               ),
               InkWell(
                 child: ListTile(
                   leading: Card(
-                    child: Icon(Icons.share,color: Constant.primaryColor,),
+                    child:Container(
+                    height: 25,
+                    width: 25,
+                    decoration: BoxDecoration(image: DecorationImage(
+                      image: AssetImage('assets/images/doctorDashImage.png'),
+                      fit: BoxFit.fill,
+                    )),
+                  ),
                   ),
                   title: Text('Patients'),
                 ),
@@ -201,17 +217,34 @@ class _DashBoardState extends State<DashBoard> {
                       MaterialPageRoute(builder: (context) => Patients()));
                 },
               ),
-              ListTile(
-                leading: Card(
-                  child: Icon(Icons.share,color: Constant.primaryColor,),
+              InkWell(
+                child: ListTile(
+                  leading: Card(
+                    child: Container(
+                      height: 25,
+                      width: 25,
+                      decoration: BoxDecoration(image: DecorationImage(
+                        image: AssetImage('assets/images/doctorDashIcon.png'),
+                        fit: BoxFit.cover,
+                      )),
+                    )
+                  ),
+                  title: Text('Doctors'),
                 ),
-                title: Text('Doctors'),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorCategories()));
+                },
               ),
-              ListTile(
-                leading: Card(
-                  child: Icon(Icons.settings,color: Constant.primaryColor,),
+              InkWell(
+                child: ListTile(
+                  leading: Card(
+                    child: Icon(Icons.settings,color: Constant.primaryColor,),
+                  ),
+                  title: Text('Setting'),
                 ),
-                title: Text('Setting'),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));
+                },
               ),
               ListTile(
                 leading: Card(
@@ -268,6 +301,7 @@ class _DashBoardState extends State<DashBoard> {
                               Text(topDoctorList[index].name),
                               Text(topDoctorList[index].course,
                               style: TextStyle(
+
                                 fontSize: 10,
                                 color: Colors.black38
                               ),
@@ -282,103 +316,120 @@ class _DashBoardState extends State<DashBoard> {
                 height: 30,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 50, top: 20, bottom: 10),
-                          child: Text('Total Referred'),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            '100',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.w500,
-                              color: Constant.primaryColor,
-                            ),
+                    child: Container(
+                      height: 120,
+                      width: MediaQuery.of(context).size.width/2.3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10,  top: 20, bottom: 10),
+                            child: Text('Total Referred'),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              '100',
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w500,
+                                color: Constant.primaryColor,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    width: 15,
-                  ),
+
                   Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 50, top: 20, bottom: 10),
-                          child: Text('Total Connected'),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            '50',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.w500,
-                              color: Constant.primaryColor,
-                            ),
+                    child: Container(
+                      height: 120,
+                      width: MediaQuery.of(context).size.width/2.3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10,  top: 20, bottom: 10),
+                            child: Text('Total Connected'),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              '50',
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w500,
+                                color: Constant.primaryColor,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
               ),
+              SizedBox(height: 20,),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 50, top: 20, bottom: 10),
-                          child: Text('Total Referred'),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            '1020',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.w500,
-                              color: Constant.primaryColor,
-                            ),
+                    child: Container(
+                      height: 120,
+                      width: MediaQuery.of(context).size.width/2.3,
+                      child: Column(
+
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10, top: 20, bottom: 10),
+                            child: Text('Total Referred'),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              '1020',
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w500,
+                                color: Constant.primaryColor,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    width: 15,
-                  ),
+
                   Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 50, top: 20, bottom: 10),
-                          child: Text('Total Connected'),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Icon(
-                            Icons.add,
-                            size: 50,
+                    child: Container(
+                      height: 120,
+                      width: MediaQuery.of(context).size.width/2.3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10, top: 20, bottom: 10),
+                            child: Text('Total Connected'),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.add_circle,
+                              color: Constant.greenColor,
+                              size: 50,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
@@ -392,12 +443,13 @@ class _DashBoardState extends State<DashBoard> {
                       Text('Record Notification',
                       style: TextStyle(
                         fontSize: 20,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold,
+                        color: Constant.primaryColor,
                       ),
                       ),
                       Text('View All',
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                            color: Constant.greenColor,
                         ),
@@ -413,48 +465,55 @@ class _DashBoardState extends State<DashBoard> {
                     scrollDirection: Axis.vertical,
                     itemCount: recordList.length,
                     itemBuilder: (BuildContext context, index) {
-                      return ListTile(
-                        leading:  Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(recordList[index].image),
-                              fit: BoxFit.cover,
-                            ),
-                            shape: BoxShape.circle,
+                      return Card(
+                        child: ListTile(
+                          title: Row(
+                            children: [
+                              Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(recordList[index].image),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Text(
+                                  recordList[index].name,
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: Constant.primaryColor,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 5,),
+                              Text(
+                                recordList[index]?.request,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                    fontWeight: FontWeight.bold
+                                ),
+                              ),
+
+
+                            ],
                           ),
-                        ),
-                        title: Row(
-                          children: [
-                            Text(
-                              recordList[index].name,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Constant.primaryColor,
-                                fontWeight: FontWeight.bold
-                              ),
-                            ),
-                            SizedBox(width: 8,),
-                            Text(
-                              recordList[index].request,
-                              style: TextStyle(
-                                fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                              ),
-                            ),
-                            Expanded(child: Container()),
-                            Text(
-                              recordList[index].time,
-                              style: TextStyle(
-                                fontSize: 12,
-                                  fontWeight: FontWeight.w400,
+                          trailing: Text(
+                            recordList[index].time,
+                            style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
                                 color: Colors.black26
-                              ),
                             ),
-                          ],
+                          ) ,
                         ),
                       );
+
                     }),
               ),
             ],

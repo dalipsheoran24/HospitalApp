@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
 class RecordModel {
-  final String name;
-  final String request;
-  final String image;
-  final String time;
+   String name;
+   String request;
+   String image;
+   String time;
 
-  RecordModel({
-this.name,this.request,this.image,this.time
-});
+  RecordModel({this.name, this.request, this.image, this.time});
 }

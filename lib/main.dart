@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_doctor/constant.dart';
 import 'package:hospital_doctor/page/home_page.dart';
+import 'package:hospital_doctor/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Constant.primaryColor
       ),
       home: HomePage(),
+      initialRoute: Routes.HOME,
+      routes: routes,
     );
   }
 }

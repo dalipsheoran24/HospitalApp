@@ -1,4 +1,5 @@
 import 'package:flutter/animation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
@@ -48,16 +49,29 @@ class _ProfileOpenPageState extends State<ProfileOpenPage> {
                   ],
                 ),
                 SizedBox(height: 50),
-                Container(
-                  height: 150,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/morris.jpg'),
-                        fit: BoxFit.cover),
-                    border: Border.all(color: Constant.primaryColor, width: 2),
-                    shape: BoxShape.circle,
-                  ),
+                Stack(
+                    children:[
+                      Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Constant.primaryColor,width: 2),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/morris.jpg'),fit: BoxFit.cover,
+                          ),shape: BoxShape.circle,
+                        ), ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 95,left: 130),
+                        child: Container(height: 30,width: 30,decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Constant.greenColor,
+                        ),
+                          child: IconButton(onPressed: (){},
+                            icon: Icon(Icons.mode_edit,color:Colors.white,size: 16,),
+                          ),
+                        ),
+                      )
+                    ]
                 ),
                 SizedBox(
                   width: double.infinity,

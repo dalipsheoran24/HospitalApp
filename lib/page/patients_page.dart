@@ -45,462 +45,498 @@ class _PatientsState extends State<Patients> {
                Card(
                  child: Padding(
                    padding: const EdgeInsets.all(8.0),
-                   child: Row(
-                     children: [
-                       Container(height: 90,width: 100,
-                         decoration: BoxDecoration(
-                           image: DecorationImage(
-                             image: AssetImage(
-                               'assets/images/ladyPatients.png'
+                   child: Container(
+                     height: 110,
+                     width: MediaQuery.of(context).size.width,
+                     child: Row(
+                       children: [
+                         Container(height: 90,width: 100,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(
+                               image: AssetImage(
+                                 'assets/images/ladyPatients.png'
+                               ),
+                               fit: BoxFit.cover
                              ),
-                             fit: BoxFit.cover
+
+                             borderRadius: BorderRadius.circular(8.0)
                            ),
-
-                           borderRadius: BorderRadius.circular(8.0)
                          ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(12.0),
-                         child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text('Marina Kuwar',
-                               style: TextStyle(
-                                 fontSize: 18,
-                                 fontWeight: FontWeight.bold,
-                                 color:Color(0xff2e60a5),
-                               ),
+                         Padding(
+                           padding: const EdgeInsets.all(12.0),
+                           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text('Marina Kuwar',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Color(0xff2e60a5),
+                                 ),
 
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Female',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                 color:Colors.black38
                                ),
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Pregnacy',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
+                               SizedBox(height: 10,),
+                               Text('Female',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
                                    color:Colors.black38
+                                 ),
                                ),
+                               SizedBox(height: 10,),
+                               Text('Pregnacy',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                     color:Colors.black38
+                                 ),
+                               ),
+
+                             ],
+                           ),
+                         ),
+                           Expanded(child: Container()),
+                           Column(crossAxisAlignment: CrossAxisAlignment.end,
+                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.only(top: 10),
+                                 child: Text(
+                                   '3days',
+                                   style: TextStyle(
+                                       fontSize: 15,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.black38
+                                   ),
+                                 ),
+                               ),
+                               SizedBox(height: 20,),
+                               ElevatedButton(onPressed: (){},
+                                 child: Text(
+                                     'Discharge'
+                                 ),
+                                 style: ElevatedButton.styleFrom(primary: Colors.red),
+                               )
+                             ],
+                           )
+                       ],
+                     ),
+                   ),
+                 ),
+               ),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 110,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          Container(height: 90,width: 100,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/manPatients.jpg'
+                                    ),
+                                    fit: BoxFit.fill
+                                ),
+
+                                borderRadius: BorderRadius.circular(8.0)
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Autor Taylor',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color:Color(0xff2e60a5),
+                                  ),
+
+                                ),
+                                SizedBox(height: 10,),
+                                Text('Male',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color:Colors.black38
+                                  ),
+                                ),
+                                SizedBox(height: 10,),
+                                Text('Corona',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color:Colors.black38
+                                  ),
+                                ),
+
+                              ],
+                            ),
+                          ),
+                          Expanded(child: Container()),
+                          Column(crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  '1days',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black38
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20,),
+                              SizedBox(
+                                width: 95,
+                                child: ElevatedButton(onPressed: (){},
+                                  child: Text(
+                                      'Admit'
+                                  ),
+                                  style: ElevatedButton.styleFrom(primary: Constant.greenColor,),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                 child: Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: Container(
+                     height: 110,
+                     width: MediaQuery.of(context).size.width,
+                     child: Row(
+                       children: [
+                         Container(height: 90,width: 100,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(
+                               image: AssetImage(
+                                 'assets/images/ladyPatients.png'
+                               ),
+                               fit: BoxFit.cover
                              ),
 
-                           ],
+                             borderRadius: BorderRadius.circular(8.0)
+                           ),
                          ),
-                       ),
+                         Padding(
+                           padding: const EdgeInsets.all(12.0),
+                           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text('Marina Kuwar',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Color(0xff2e60a5),
+                                 ),
+
+                               ),
+                               SizedBox(height: 10,),
+                               Text('Female',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Colors.black38
+                                 ),
+                               ),
+                               SizedBox(height: 10,),
+                               Text('Pregnacy',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                     color:Colors.black38
+                                 ),
+                               ),
+
+                             ],
+                           ),
+                         ),
                          Expanded(child: Container()),
-                         Column(
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10),
-                               child: Text(
-                                 '3days',
-                                 style: TextStyle(
-                                     fontSize: 15,
-                                     fontWeight: FontWeight.bold,
-                                     color: Colors.black38
+                           Column(crossAxisAlignment: CrossAxisAlignment.end,
+                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.only(top: 10),
+                                 child: Text(
+                                   '3days',
+                                   style: TextStyle(
+                                       fontSize: 15,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.black38
+                                   ),
                                  ),
                                ),
-                             ),
-                             SizedBox(height: 20,),
-                             ElevatedButton(onPressed: (){},
-                               child: Text(
-                                   'Discharge'
-                               ),
-                               style: ElevatedButton.styleFrom(primary: Colors.red),
-                             )
-                           ],
-                         )
-                     ],
+                               SizedBox(height: 20,),
+                               ElevatedButton(onPressed: (){},
+                                 child: Text(
+                                     'Discharge'
+                                 ),
+                                 style: ElevatedButton.styleFrom(primary: Colors.red),
+                               )
+                             ],
+                           )
+                       ],
+                     ),
                    ),
                  ),
                ),
                 Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Container(height: 90,width: 100,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/manPatients.jpg'
-                                  ),
-                                  fit: BoxFit.fill
-                              ),
-
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Autor Taylor',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color:Color(0xff2e60a5),
+                    child: Container(
+                      height: 110,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        children: [
+                          Container(height: 90,width: 100,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/manPatients.jpg'
+                                    ),
+                                    fit: BoxFit.fill
                                 ),
 
-                              ),
-                              SizedBox(height: 10,),
-                              Text('Male',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color:Colors.black38
-                                ),
-                              ),
-                              SizedBox(height: 10,),
-                              Text('Corona',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color:Colors.black38
-                                ),
-                              ),
-
-                            ],
-                          ),
-                        ),
-                        Expanded(child: Container()),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Text(
-                                '1days',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black38
-                                ),
-                              ),
+                                borderRadius: BorderRadius.circular(8.0)
                             ),
-                            SizedBox(height: 20,),
-                            ElevatedButton(onPressed: (){},
-                              child: Text(
-                                  'Discharge'
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Autor Taylor',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color:Color(0xff2e60a5),
+                                  ),
+
+                                ),
+                                SizedBox(height: 10,),
+                                Text('Male',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color:Colors.black38
+                                  ),
+                                ),
+                                SizedBox(height: 10,),
+                                Text('Corona',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color:Colors.black38
+                                  ),
+                                ),
+
+                              ],
+                            ),
+                          ),
+                          Expanded(child: Container()),
+                          Column(crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  '1days',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black38
+                                  ),
+                                ),
                               ),
-                              style: ElevatedButton.styleFrom(primary: Constant.greenColor,),
-                            )
-                          ],
-                        )
-                      ],
+                              SizedBox(height: 20,),
+                              SizedBox(
+                                width: 95,
+                                child: ElevatedButton(onPressed: (){},
+                                  child: Text(
+                                      'Admit'
+                                  ),
+                                  style: ElevatedButton.styleFrom(primary: Constant.greenColor,),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
                 Card(
                  child: Padding(
                    padding: const EdgeInsets.all(8.0),
-                   child: Row(
-                     children: [
-                       Container(height: 90,width: 100,
-                         decoration: BoxDecoration(
-                           image: DecorationImage(
-                             image: AssetImage(
-                               'assets/images/ladyPatients.png'
+                   child: Container(
+                     height: 110,
+                     width: MediaQuery.of(context).size.width,
+                     child: Row(
+                       children: [
+                         Container(height: 90,width: 100,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(
+                               image: AssetImage(
+                                 'assets/images/ladyPatients.png'
+                               ),
+                               fit: BoxFit.cover
                              ),
-                             fit: BoxFit.cover
+
+                             borderRadius: BorderRadius.circular(8.0)
                            ),
-
-                           borderRadius: BorderRadius.circular(8.0)
                          ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(12.0),
-                         child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text('Marina Kuwar',
-                               style: TextStyle(
-                                 fontSize: 18,
-                                 fontWeight: FontWeight.bold,
-                                 color:Color(0xff2e60a5),
-                               ),
-
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Female',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                 color:Colors.black38
-                               ),
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Pregnacy',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                   color:Colors.black38
-                               ),
-                             ),
-
-                           ],
-                         ),
-                       ),
-                       Expanded(child: Container()),
-                         Column(
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10),
-                               child: Text(
-                                 '3days',
+                         Padding(
+                           padding: const EdgeInsets.all(12.0),
+                           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text('Marina Kuwar',
                                  style: TextStyle(
-                                     fontSize: 15,
-                                     fontWeight: FontWeight.bold,
-                                     color: Colors.black38
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Color(0xff2e60a5),
+                                 ),
+
+                               ),
+                               SizedBox(height: 10,),
+                               Text('Female',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Colors.black38
                                  ),
                                ),
-                             ),
-                             SizedBox(height: 20,),
-                             ElevatedButton(onPressed: (){},
-                               child: Text(
-                                   'Discharge'
-                               ),
-                               style: ElevatedButton.styleFrom(primary: Colors.red),
-                             )
-                           ],
-                         )
-                     ],
-                   ),
-                 ),
-               ),
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Container(height: 90,width: 100,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/manPatients.jpg'
-                                  ),
-                                  fit: BoxFit.fill
-                              ),
-
-                              borderRadius: BorderRadius.circular(8.0)
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Autor Taylor',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color:Color(0xff2e60a5),
-                                ),
-
-                              ),
-                              SizedBox(height: 10,),
-                              Text('Male',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color:Colors.black38
-                                ),
-                              ),
-                              SizedBox(height: 10,),
-                              Text('Corona',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color:Colors.black38
-                                ),
-                              ),
-
-                            ],
-                          ),
-                        ),
-                        Expanded(child: Container()),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Text(
-                                '1days',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black38
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 20,),
-                            ElevatedButton(onPressed: (){},
-                              child: Text(
-                                  'Discharge'
-                              ),
-                              style: ElevatedButton.styleFrom(primary: Constant.greenColor,),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Card(
-                 child: Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Row(
-                     children: [
-                       Container(height: 90,width: 100,
-                         decoration: BoxDecoration(
-                           image: DecorationImage(
-                             image: AssetImage(
-                               'assets/images/ladyPatients.png'
-                             ),
-                             fit: BoxFit.cover
-                           ),
-
-                           borderRadius: BorderRadius.circular(8.0)
-                         ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(12.0),
-                         child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text('Marina Kuwar',
-                               style: TextStyle(
-                                 fontSize: 18,
-                                 fontWeight: FontWeight.bold,
-                                 color:Color(0xff2e60a5),
-                               ),
-
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Female',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                 color:Colors.black38
-                               ),
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Pregnacy',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                   color:Colors.black38
-                               ),
-                             ),
-
-                           ],
-                         ),
-                       ),
-                       Expanded(child: Container()),
-                         Column(
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10),
-                               child: Text(
-                                 '3days',
+                               SizedBox(height: 10,),
+                               Text('Pregnacy',
                                  style: TextStyle(
-                                     fontSize: 15,
-                                     fontWeight: FontWeight.bold,
-                                     color: Colors.black38
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                     color:Colors.black38
                                  ),
                                ),
-                             ),
-                             SizedBox(height: 20,),
-                             ElevatedButton(onPressed: (){},
-                               child: Text(
-                                   'Discharge'
+
+                             ],
+                           ),
+                         ),
+                         Expanded(child: Container()),
+                           Column(crossAxisAlignment: CrossAxisAlignment.end,
+                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.only(top: 10),
+                                 child: Text(
+                                   '3days',
+                                   style: TextStyle(
+                                       fontSize: 15,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.black38
+                                   ),
+                                 ),
                                ),
-                               style: ElevatedButton.styleFrom(primary: Colors.red),
-                             )
-                           ],
-                         )
-                     ],
+                               SizedBox(height: 20,),
+                               ElevatedButton(onPressed: (){},
+                                 child: Text(
+                                     'Discharge'
+                                 ),
+                                 style: ElevatedButton.styleFrom(primary: Colors.red),
+                               )
+                             ],
+                           )
+                       ],
+                     ),
                    ),
                  ),
                ),
                 Card(
                  child: Padding(
                    padding: const EdgeInsets.all(8.0),
-                   child: Row(
-                     children: [
-                       Container(height: 90,width: 100,
-                         decoration: BoxDecoration(
-                           image: DecorationImage(
-                             image: AssetImage(
-                               'assets/images/manPatients.jpg'
+                   child: Container(
+                     height: 110,
+                     width: MediaQuery.of(context).size.width,
+                     child: Row(
+                       children: [
+                         Container(height: 90,width: 100,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(
+                               image: AssetImage(
+                                 'assets/images/manPatients.jpg'
+                               ),
+                               fit: BoxFit.fill
                              ),
-                             fit: BoxFit.fill
+
+                             borderRadius: BorderRadius.circular(8.0)
                            ),
-
-                           borderRadius: BorderRadius.circular(8.0)
                          ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(12.0),
-                         child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text('Autor Taylor',
-                               style: TextStyle(
-                                 fontSize: 18,
-                                 fontWeight: FontWeight.bold,
-                                 color:Color(0xff2e60a5),
-                               ),
-
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Male',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                 color:Colors.black38
-                               ),
-                             ),
-                             SizedBox(height: 10,),
-                             Text('Corona',
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 fontWeight: FontWeight.bold,
-                                   color:Colors.black38
-                               ),
-                             ),
-
-                           ],
-                         ),
-                       ),
-                       Expanded(child: Container()),
-                         Column(
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10),
-                               child: Text(
-                                 '1days',
+                         Padding(
+                           padding: const EdgeInsets.all(12.0),
+                           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text('Autor Taylor',
                                  style: TextStyle(
-                                     fontSize: 15,
-                                     fontWeight: FontWeight.bold,
-                                     color: Colors.black38
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Color(0xff2e60a5),
+                                 ),
+
+                               ),
+                               SizedBox(height: 10,),
+                               Text('Male',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                   color:Colors.black38
                                  ),
                                ),
-                             ),
-                             SizedBox(height: 20,),
-                             ElevatedButton(onPressed: (){},
-                               child: Text(
-                                   'Discharge'
+                               SizedBox(height: 10,),
+                               Text('Corona',
+                                 style: TextStyle(
+                                   fontSize: 16,
+                                   fontWeight: FontWeight.bold,
+                                     color:Colors.black38
+                                 ),
                                ),
-                               style: ElevatedButton.styleFrom(primary: Constant.greenColor,),
-                             )
-                           ],
-                         )
-                     ],
+
+                             ],
+                           ),
+                         ),
+                         Expanded(child: Container()),
+                           Column(crossAxisAlignment: CrossAxisAlignment.end,
+                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.only(top: 10),
+                                 child: Text(
+                                   '1days',
+                                   style: TextStyle(
+                                       fontSize: 15,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.black38
+                                   ),
+                                 ),
+                               ),
+                               SizedBox(height: 20,),
+                               SizedBox(
+                                 width: 95,
+                                 child: ElevatedButton(
+                                   onPressed: (){},
+                                   child: Text(
+                                       'Admit',
+
+                                   ),
+                                   style: ElevatedButton.styleFrom(primary: Constant.greenColor,),
+
+                                 ),
+                               )
+                             ],
+                           )
+                       ],
+                     ),
                    ),
                  ),
                ),
