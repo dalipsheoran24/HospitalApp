@@ -30,7 +30,7 @@ class _SurgeonState extends State<Surgeon> {
       list.forEach((element){
         doctorList.add(DoctorCategoriesInfo.fromJson(element));
       });
-
+      doctorList.retainWhere((element) =>element.specialty =="surgeon");
       setState(() {});
     }
 
@@ -173,7 +173,9 @@ class _SurgeonState extends State<Surgeon> {
                     crossAxisCount: 2,
                     mainAxisSpacing: 8,
                   ),
+                  // ignore: missing_return
                   itemBuilder: (context,index){
+
                     return InkWell(
                       child: Card(
                         child: Padding(
@@ -211,28 +213,28 @@ class _SurgeonState extends State<Surgeon> {
                               Row(
                                 children: [
                                   Icon(Icons.star_purple500_sharp,
-                                  color: Colors.yellow,
+                                    color: Colors.yellow,
                                     size: 16,
                                   ),
                                   Icon(Icons.star_purple500_sharp,
-                                  color: Colors.yellow,
+                                    color: Colors.yellow,
                                     size: 16,
                                   ),
                                   Icon(Icons.star_purple500_sharp,
-                                  color: Colors.yellow,
+                                    color: Colors.yellow,
                                     size: 16,
                                   ),
                                   Icon(Icons.star_purple500_sharp,
-                                  color: Colors.yellow,
+                                    color: Colors.yellow,
                                     size: 16,
                                   ),
                                   Icon(Icons.star_purple500_sharp,
-                                  color: Colors.yellow,
+                                    color: Colors.yellow,
                                     size: 16,
                                   ),
                                   Expanded(
                                     child: Icon(Icons.arrow_forward,
-                                    color: Constant.primaryColor,
+                                      color: Constant.primaryColor,
                                       size: 20,
                                     ),
                                   ),
@@ -249,6 +251,7 @@ class _SurgeonState extends State<Surgeon> {
                             arguments: doctorList[index]);
                       },
                     );
+
                   },
                 ),
               )
