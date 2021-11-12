@@ -28,7 +28,7 @@ class _DetmatologistState extends State<Detmatologist> {
     if (response.statusCode == 200) {
       final list = jsonDecode(response.body) as List;
       list.forEach((element){
-        doctorList.add(DoctorCategoriesInfo.fromJson(element));
+        doctorList.add(DoctorCategoriesInfo.fromJson( element ));
       });
       doctorList.retainWhere((element) =>element.specialty ==  "detmatologist" );
       setState(() {});
