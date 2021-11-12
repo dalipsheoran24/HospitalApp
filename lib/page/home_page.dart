@@ -169,9 +169,11 @@ class _HomePageState extends State<HomePage> {
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter password';
+
                                 }
                                 return null;
                               },
+
                             ),
                           ],
                         ),
@@ -213,6 +215,7 @@ class _HomePageState extends State<HomePage> {
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.pushNamed(context, Routes.SIGNUP);
+
                             },
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
