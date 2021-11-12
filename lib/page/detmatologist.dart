@@ -31,7 +31,7 @@ class _DetmatologistState extends State<Detmatologist> {
         doctorList.add(DoctorCategoriesInfo.fromJson( element ));
       });
       doctorList.retainWhere((element) =>element.specialty ==  "detmatologist" );
-      setState(() {});
+      setState(() {}  );
     }
 
   }
