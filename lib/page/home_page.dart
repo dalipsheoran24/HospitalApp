@@ -8,6 +8,7 @@ import 'package:hospital_doctor/page/dash_board.dart';
 import 'package:http/http.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import '../main.dart';
 import '../request.dart';
 import '../routes.dart';
 
@@ -22,7 +23,9 @@ class _HomePageState extends State<HomePage> {
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
         body: Form(
@@ -119,6 +122,7 @@ class _HomePageState extends State<HomePage> {
                                 }
                                 return null;
                               },
+
                             ),
                           ],
                         ),
@@ -191,6 +195,7 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {
                               if (_formKey.currentState.validate()) {
                                 login(context);
+
                               }
                             },
                             child: Padding(
@@ -327,9 +332,9 @@ class _HomePageState extends State<HomePage> {
       ),
     ));
   }
-
   Future login(BuildContext context) async {
     String email = emailController.text;
+
     String password = passwordController.text;
     LoginRequest request = LoginRequest(email: email, password: password);
 
@@ -340,16 +345,45 @@ class _HomePageState extends State<HomePage> {
     print('Response body: ${response.body}');
 
     if(response.statusCode == 200) {
-      String msg =
+      var result =
       jsonDecode(response.body);
-      if(msg == 'login successfull'){
-       Navigator.pushNamed(context, Routes.DASH);
-      }else{
+      if(result is String){
         Fluttertoast.showToast(
-            msg: "$msg"
-            );
+            msg: "$result"
+        );
+        return;
+      }
+      if(result['status']==true){
+        //pref.setString('Id',  result['id']);
+        Navigator.pushNamed(context, Routes.DASH);
       }
     }
     print("");
   }
+  // Future login(BuildContext context) async {
+  //   String email = emailController.text;
+  //
+  //   String password = passwordController.text;
+  //   LoginRequest request = LoginRequest(email: email, password: password);
+  //
+  //   var url = Uri.parse(
+  //       'https://dazzingshadow.com/hospital_refer/Api_ci/login_check?email=$email&password=$password');
+  //   var response = await http.get(url);
+  //   print('Response status: ${response.statusCode}');
+  //   print('Response body: ${response.body}');
+  //
+  //   if(response.statusCode == 200) {
+  //     var msg =
+  //     jsonDecode(response.body);
+  //     if(msg == "login Sucessfull!"){
+  //       Navigator.pushNamed(context, Routes.DASH);
+  //     }else{
+  //       Fluttertoast.showToast(
+  //           msg: "$msg"
+  //           );
+  //     }
+  //   }
+  //   print("");
+  // }
+
 }

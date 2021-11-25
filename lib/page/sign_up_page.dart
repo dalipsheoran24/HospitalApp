@@ -11,6 +11,7 @@ import 'package:http/http.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
+import '../main.dart';
 import '../request.dart';
 import '../routes.dart';
 import '../signup_request.dart';
@@ -385,7 +386,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   ),
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Please enter password';
+                                      return 'Please enter city';
                                     }
                                     return null;
                                   },
@@ -701,8 +702,9 @@ if (branch_name.isEmpty) {
       if (response.statusCode == 200 &&
           map['message'] == "Registration Sucessfull!") {
         // dpctorId = response['info']['id'];
-        // setVendor( response['info']);
-
+         //setVendor( response['info']);
+        //pref.setString('Id',  response['info']['id']);
+        // String id=pref.getString('Id');
         Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
       }
     }

@@ -172,3 +172,31 @@ class _OrthopendicState extends State<Orthopendic> {
     );
   }
 }
+// Future login(BuildContext context) async {
+//   String email = emailController.text;
+//
+//   String password = passwordController.text;
+//   LoginRequest request = LoginRequest(email: email, password: password);
+//
+//   var url = Uri.parse(
+//       'https://dazzingshadow.com/hospital_refer/Api_ci/login_check?email=$email&password=$password');
+//   var response = await http.get(url);
+//   print('Response status: ${response.statusCode}');
+//   print('Response body: ${response.body}');
+//
+//   if(response.statusCode == 200) {
+//     var result =
+//     jsonDecode(response.body);
+//     if(result is String){
+//       Fluttertoast.showToast(
+//           msg: "$result"
+//       );
+//       return;
+//     }
+//     if(result['status']==true){
+//       pref.setString('Id',  result['id']);
+//       Navigator.pushNamed(context, Routes.DASH);
+//     }
+//   }
+//   print("");
+// }

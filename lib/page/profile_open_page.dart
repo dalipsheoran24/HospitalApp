@@ -1,15 +1,41 @@
+import 'dart:convert';
+
 import 'package:flutter/animation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:hospital_doctor/model_package/profile_page_info.dart';
+import 'package:http/http.dart';
 
 import '../constant.dart';
 
 class ProfileOpenPage extends StatefulWidget {
   @override
   _ProfileOpenPageState createState() => _ProfileOpenPageState();
+
 }
 
 class _ProfileOpenPageState extends State<ProfileOpenPage> {
+  List<ProfileOpenInfo> doctorProfileList =[];
+  void initState() {
+    //surgeonList();
+    featchDoctor();
+    super.initState();
+  }
+  Future featchDoctor() async {
+    Uri myUri = Uri.parse(
+        "https://dazzingshadow.com/hospital_refer/Api_ci/get_regidoctor");
+    var response = await get(myUri);
+    if (response.statusCode == 200) {
+      final list = jsonDecode(response.body) as List;
+      list.forEach((element){
+        doctorProfileList.add(ProfileOpenInfo.fromJson(element));
+      });
+      doctorProfileList.retainWhere((element) =>element.email == "dalipsh@gmail.com"
+      );
+      setState(() {});
+    }
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,7 +116,7 @@ class _ProfileOpenPageState extends State<ProfileOpenPage> {
                             height: 20,
                           ),
                           Text(
-                            'Morris Anderson',
+                            doctorProfileList[0].name,
                             style: TextStyle(
                               fontSize: 22,
                               color: Color(0xff2e60a5),
@@ -118,7 +144,8 @@ class _ProfileOpenPageState extends State<ProfileOpenPage> {
                             height: 20,
                           ),
                           Text(
-                            '1234567890',
+                            doctorProfileList[0].phoneNo,
+                            //'1234567890',
                             style: TextStyle(
                               fontSize: 22,
                               color: Color(0xff2e60a5),
@@ -146,7 +173,8 @@ class _ProfileOpenPageState extends State<ProfileOpenPage> {
                             height: 20,
                           ),
                           Text(
-                            'morrisanderson10@gmail.com',
+                            doctorProfileList[0].email,
+                           // 'morrisanderson10@gmail.com',
                             style: TextStyle(
                               fontSize: 22,
                               color: Color(0xff2e60a5),

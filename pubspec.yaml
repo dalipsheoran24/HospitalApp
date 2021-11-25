@@ -32,7 +32,7 @@ dependencies:
   form_data: ^0.0.1-nullsafety.1
   dio: ^4.0.1
   image: ^3.0.8
-  shared_preferences: ^2.0.8
+  shared_preferences: ^2.0.7
 
 
 
