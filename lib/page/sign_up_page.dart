@@ -244,7 +244,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     hintText: 'Enter Mobile No',
                                   ),
 
-                                  validator: (value) {
+                                   validator: (value) {
                                     if (value.length != 10) {
                                       return 'Please enter Mobile no';
                                     }
